@@ -1,13 +1,41 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect } from "react";
+import { ThemeProvider } from "@/contexts/ThemeContext";
+import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import ExperienceSection from "@/components/ExperienceSection";
+import SkillsSection from "@/components/SkillsSection";
+import EducationSection from "@/components/EducationSection";
+import CertificationsSection from "@/components/CertificationsSection";
+import ResumeSection from "@/components/ResumeSection";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
+import BackgroundSlider from "@/components/BackgroundSlider";
 
 const Index = () => {
+  useEffect(() => {
+    document.title = "Jaipal Peddaboina - DevOps Engineer Portfolio";
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <ThemeProvider>
+      <div className="min-h-screen bg-background text-foreground relative overflow-x-hidden">
+        <BackgroundSlider />
+        <Header />
+        <main>
+          <HeroSection />
+          <AboutSection />
+          <ExperienceSection />
+          <SkillsSection />
+          <EducationSection />
+          <CertificationsSection />
+          <ResumeSection />
+          <ContactSection />
+        </main>
+        <Footer />
       </div>
-    </div>
+    </ThemeProvider>
   );
 };
 
